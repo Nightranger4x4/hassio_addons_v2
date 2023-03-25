@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.19d]
+- Fix channel measurement from "" to none
+
 ## [0.3.19c]
 - Fix frequency measurement from Mhz to MHz
 
