@@ -46,7 +46,7 @@ mappings = {
         "config": {
             "device_class": "timestamp",
             "name": "last_seen",
-            "unit_of_measurement": "",
+            "unit_of_measurement": "None",
             "value_template": "{{ value }}"
         }
     },
@@ -65,7 +65,6 @@ mappings = {
         "object_suffix": "channel",
         "config": {
             "name": "device_channel",
-            "unit_of_measurement": "",
             "value_template": "{{ value }}"
         }
     },
