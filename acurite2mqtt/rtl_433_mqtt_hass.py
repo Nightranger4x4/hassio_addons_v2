@@ -224,7 +224,7 @@ mappings = {
         "object_suffix": "WS",
         "config": {
             "name": "Wind Speed",
-            "unit_of_measurement": "mi/h",
+            "unit_of_measurement": "mph",
             "value_template": "{{ value|float }}"
         }
     },
