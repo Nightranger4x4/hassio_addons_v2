@@ -66,11 +66,7 @@ mappings = {
         "config": {
             "device_class": "enum",
             "name": "device_channel",
-            "options": {
-                "- A",
-                "- B",
-                "- C"
-            }
+            "options": "A, B, C",
             "value_template": "{{ value }}"
         }
     },
