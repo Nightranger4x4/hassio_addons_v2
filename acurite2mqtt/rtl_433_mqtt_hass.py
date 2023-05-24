@@ -65,7 +65,6 @@ mappings = {
         "object_suffix": "channel",
         "config": {
             "name": "device_channel",
-            "unit_of_measurement": "",
             "value_template": "{{ value }}"
         }
     },
