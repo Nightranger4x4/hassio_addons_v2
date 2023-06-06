@@ -6,24 +6,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.3.22]
 
-    Fixing wind speed unit of measurement
-    Fixing Rain sensor unit of measurement
+- Fixing wind speed unit of measurement
+- Fixing Rain sensor unit of measurement
 
 ## [0.3.20b]
 
-    Fixed issue where debug and whitelist_enable are incorrectly marked as being on when they are off.
+- Fixed issue where debug and whitelist_enable are incorrectly marked as being on when they are off.
     When whitelist_enabled is on, any Device ID and Models not in whitelist will be listed in the log. This will only be listed once, until the add-on is restarted. Debug not required.
-        whitelist only prevents Home Assistant Auto Discovery - devices will still show up in MQTT *
-    If no instance is found, device will be assigned an instance of 0 to try and fix that add-on crash when no instance is found.
-    Fix bug where whitelist_enabled is sometimes ignored.
-    Switch to an actual logger for log messages.
-    Added device class to sensors
-    Removed any "unit of measurement" that was empty to prevent errors after 2023.5 update
+    whitelist only prevents Home Assistant Auto Discovery - devices will still show up in MQTT *
+- If no instance is found, device will be assigned an instance of 0 to try and fix that add-on crash when no instance is found.
+- Fix bug where whitelist_enabled is sometimes ignored.
+- Switch to an actual logger for log messages.
+- Added device class to sensors
+- Removed any "unit of measurement" that was empty to prevent errors after 2023.5 update
     state_class is now defined for each device instead of globally set to measurement to reduce errors after 2023.5 update.
-    auto discovery can now be turned off in the configuration for anyone that doesn't want devices to be auto added to home assistant
-    Some bug fixes by @doozers-do
-        Channel now defaults to A instead of 0
-        Channel sensor now defined as a enum device with options as A, B, or C
+- auto discovery can now be turned off in the configuration for anyone that doesn't want devices to be auto added to home assistant
+  Some bug fixes by @doozers-do
+    - Channel now defaults to A instead of 0
+    - Channel sensor now defined as a enum device with options as A, B, or C
 
 ## [0.3.19h]
 - Fix enum in channel
