@@ -17,14 +17,14 @@
     "mqtt_topic": "rtl_433",
     "mqtt_retain" : "true",
     "protocol": "-R 11 -R 40 -R 41 -R 55 -R 74",
-    "whitelist_enable": "false",
+    "whitelist_enable": "true",
     "whitelist": "",
     "expire_after": 0,
     "units": "customary",
     "discovery_prefix": "homeassistant",
     "discovery_interval": 600,
-    "auto_discovery": "true",
-    "debug": "false"
+    "auto_discovery": "false",
+    "debug": "true"
   },
   "schema":
     {
