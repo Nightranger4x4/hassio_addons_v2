@@ -64,7 +64,7 @@ mappings = {
         "object_suffix": "last_seen",
         "config": {
             "device_class": "timestamp",
-            "state_class":"measurement",
+            "state_class":"none",
             "entity_category": "diagnostic",
             "name": "last_seen",
             "value_template": "{{ value }}"
