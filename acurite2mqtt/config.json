@@ -1,5 +1,5 @@
 {
-  "name": "Acurite to Home Assistant",
+  "name": "Acurite to Home Assistant V2",
   "version": "0.3.22",
   "slug": "acurite2mqttv2",
   "description": "Acurite Sensors to Home Assistant via MQTT with Autodiscovery",
