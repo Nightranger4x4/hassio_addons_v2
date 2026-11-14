@@ -648,17 +648,16 @@ def bridge_event_to_hass(mqttc, topic, data):
         blocked.append('{}'.format(data['id']))
         return
 
-    if (auto_discovery == True):
+    if auto_discovery:
         # Let's reduce the noise in the log and hide the duplicate notifications.
-        if (device not in rate_limited) or ( (datetime.now() - rate_limited[device]).seconds > 30 ):
-            logging.debug('Device: {} - Creating/Updating device config in Home Assistant for Auto discovery.'.format(device))
-        rate_limited[device] = datetime.now()
+        if (device not in rate_limited) or ((datetime.now() - rate_limited[device]).total_seconds() > 30):
+            logging.debug('Device: %s - Creating/Updating device config in Home Assistant for Auto discovery.', device)
+            rate_limited[device] = datetime.now()
         # detect known attributes
         for key in data.keys():
             if key in mappings:
                 publish_config(mqttc, key, model, instance, channel, mappings[key])
-                logging.debug('Publish Info - 
-
+                logging.debug('Publish Info - %s, %s, %s, %s, %s, %s', mqttc, key, model, instance, channel, mappings[key])
 
 def rtl_433_bridge():
     """Run a MQTT Home Assistant auto discovery bridge for rtl_433."""
