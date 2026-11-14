@@ -132,34 +132,31 @@ mappings = {
             "state_class":"measurement",
             "name": "Temperature",
             "unit_of_measurement": "°F",
-            "assumed_state" : "True",
             "value_template": "{{ value|float }}"
         }
     },
      "temperature_1_F": {
         "device_type": "sensor",
-        "object_suffix": "F",
+        "object_suffix": "F1",
         "config": {
             "device_class": "temperature",
+            "state_class": "measurement",
             "name": "Temperature 1",
             "unit_of_measurement": "°F",
-            "assumed_state" : "True",
             "value_template": "{{ value|float }}"
         }
     },
     "temperature_2_F": {
         "device_type": "sensor",
-        "object_suffix": "F",
+        "object_suffix": "F2",
         "config": {
             "device_class": "temperature",
             "state_class":"measurement",
             "name": "Temperature 2",
             "unit_of_measurement": "°F",
-            "assumed_state" : "True",
             "value_template": "{{ value|float }}"
         }
     },
-
     "battery_ok": {
         "device_type": "sensor",
         "object_suffix": "B",
@@ -170,7 +167,6 @@ mappings = {
             "value_template": "{{ float(value) * 99 + 1 | int }}"
         }
     },
-
     "humidity": {
         "device_type": "sensor",
         "object_suffix": "H",
@@ -182,7 +178,6 @@ mappings = {
             "value_template": "{{ value|float }}"
         }
     },
-
     "moisture": {
         "device_type": "sensor",
         "object_suffix": "H",
@@ -194,7 +189,6 @@ mappings = {
             "value_template": "{{ value|float }}"
         }
     },
-
     "pressure_hPa": {
         "device_type": "sensor",
         "object_suffix": "P",
@@ -206,7 +200,6 @@ mappings = {
             "value_template": "{{ value|float }}"
         }
     },
-
     "pressure_kPa": {
         "device_type": "sensor",
         "object_suffix": "P",
@@ -218,7 +211,6 @@ mappings = {
             "value_template": "{{ value|float }}"
         }
     },
-    
     "pressure_inHg": {
         "device_type": "sensor",
         "object_suffix": "P",
@@ -230,7 +222,6 @@ mappings = {
             "value_template": "{{ value|float }}"
         }
     },
-
     "wind_speed_km_h": {
         "device_type": "sensor",
         "object_suffix": "WS",
@@ -242,7 +233,6 @@ mappings = {
             "value_template": "{{ value|float }}"
         }
     },
-
     "wind_avg_km_h": {
         "device_type": "sensor",
         "object_suffix": "WS",
@@ -253,7 +243,6 @@ mappings = {
             "value_template": "{{ value|float }}"
         }
     },
-
     "wind_avg_mi_h": {
         "device_type": "sensor",
         "object_suffix": "WS",
@@ -265,7 +254,6 @@ mappings = {
             "value_template": "{{ value|float }}"
         }
     },
-
     "wind_avg_m_s": {
         "device_type": "sensor",
         "object_suffix": "WS",
@@ -277,7 +265,6 @@ mappings = {
             "value_template": "{{ float(value|float) * 3.6 | round(2) }}"
         }
     },
-
     "wind_speed_m_s": {
         "device_type": "sensor",
         "object_suffix": "WS",
@@ -288,7 +275,6 @@ mappings = {
             "value_template": "{{ float(value|float) * 3.6 }}"
         }
     },
-
     "gust_speed_km_h": {
         "device_type": "sensor",
         "object_suffix": "GS",
@@ -300,7 +286,6 @@ mappings = {
             "value_template": "{{ value|float }}"
         }
     },
-
     "wind_max_km_h": {
         "device_type": "sensor",
         "object_suffix": "GS",
@@ -312,7 +297,6 @@ mappings = {
             "value_template": "{{ value|float }}"
         }
     },
-
     "wind_max_m_s": {
         "device_type": "sensor",
         "object_suffix": "GS",
@@ -321,10 +305,9 @@ mappings = {
             "state_class":"measurement",
             "name": "Wind max",
             "unit_of_measurement": "m/s",
-            "value_template": "{{ float(value|float) * 3.6 | round(2) }}"
+            "value_template": "{{ value | float }}"
         }
     },
-
     "gust_speed_m_s": {
         "device_type": "sensor",
         "object_suffix": "GS",
@@ -336,17 +319,17 @@ mappings = {
             "value_template": "{{ float(value|float) * 3.6 }}"
         }
     },
-
     "wind_dir_deg": {
         "device_type": "sensor",
         "object_suffix": "WD",
         "config": {
+            "device_class": "wind_direction",
+            "state_class": "measurement",
             "name": "Wind Direction",
             "unit_of_measurement": "°",
             "value_template": "{{ value|float }}"
         }
     },
-
     "rain_mm": {
         "device_type": "sensor",
         "object_suffix": "RT",
@@ -358,7 +341,6 @@ mappings = {
             "value_template": "{{ value|float }}"
         }
     },
-
     "rain_mm_h": {
         "device_type": "sensor",
         "object_suffix": "RR",
@@ -370,7 +352,6 @@ mappings = {
             "value_template": "{{ value|float }}"
         }
     },
-
     "rain_in": {
         "device_type": "sensor",
         "object_suffix": "RT",
@@ -382,7 +363,6 @@ mappings = {
             "value_template": "{{ value|float }}"
         }
     },
-
     "rain_rate_in_h": {
         "device_type": "sensor",
         "object_suffix": "RR",
@@ -394,30 +374,27 @@ mappings = {
             "value_template": "{{ value|float }}"
         }
     },
-
     "tamper": {
         "device_type": "binary_sensor",
         "object_suffix": "tamper",
         "config": {
             "device_class": "safety",
             "entity_category": "diagnostic",
-            "force_update": "true",
+            "force_update": True,
             "payload_on": "1",
             "payload_off": "0"
         }
     },
-
     "alarm": {
         "device_type": "binary_sensor",
         "object_suffix": "alarm",
         "config": {
             "device_class": "safety",
-            "force_update": "true",
+            "force_update": True,
             "payload_on": "1",
             "payload_off": "0"
         }
     },
-
     "rssi": {
         "device_type": "sensor",
         "object_suffix": "rssi",
@@ -429,7 +406,6 @@ mappings = {
             "value_template": "{{ value|float|round(2) }}"
         }
     },
-
     "snr": {
         "device_type": "sensor",
         "object_suffix": "snr",
@@ -441,7 +417,6 @@ mappings = {
             "value_template": "{{ value|float|round(2) }}"
         }
     },
-
     "noise": {
         "device_type": "sensor",
         "object_suffix": "noise",
@@ -452,18 +427,17 @@ mappings = {
             "value_template": "{{ value|float|round(2) }}"
         }
     },
-
     "depth_cm": {
         "device_type": "sensor",
         "object_suffix": "D",
         "config": {
+            "device_class": "distance",
             "state_class":"measurement",
             "name": "Depth",
             "unit_of_measurement": "cm",
             "value_template": "{{ value|float }}"
         }
     },
-
     "power_W": {
         "device_type": "sensor",
         "object_suffix": "watts",
@@ -475,54 +449,48 @@ mappings = {
             "value_template": "{{ value|float }}"
         }
     },
-
     "lux": {
         "device_type": "sensor",
         "object_suffix": "lux",
         "config": {
             "device_class": "illuminance",
-            "state_class":"measurement",
-            "name": "Outside Luminancee",
-            "unit_of_measurement": "lux",
+            "state_class": "measurement",
+            "name": "Outside Illuminance",
+            "unit_of_measurement": "lx",
             "value_template": "{{ value|int }}"
         }
     },
-
     "light_klx": {
         "device_type": "sensor",
         "object_suffix": "light_klx",
         "config": {
             "device_class": "illuminance",
-            "name": "Outside Luminancee",
-            "unit_of_measurement": "lux",
-            "value_template": "{{ value|int }}"
+            "state_class": "measurement",
+            "name": "Outside Light",
+            "unit_of_measurement": "lx",
+            "value_template": "{{ (value | float * 1000) | int }}"
         }
     },
-
     "brightness": {
         "device_type": "sensor",
-        "object_suffix": "lux",
+        "object_suffix": "brightness",
         "config": {
-            "device_class": "illuminance",
             "state_class":"measurement",
             "name": "Brightness",
-            "unit_of_measurement": "lux",
+            "unit_of_measurement": "lx",
             "value_template": "{{ value|int }}"
         }
     },
-
     "uv": {
         "device_type": "sensor",
         "object_suffix": "uv",
         "config": {
-            "device_class": "irradiance",
             "state_class":"measurement",
             "name": "UV Index",
             "unit_of_measurement": "UV Index",
             "value_template": "{{ value|int }}"
         }
     },
-
     "storm_dist": {
         "device_type": "sensor",
         "object_suffix": "stdist",
@@ -534,7 +502,6 @@ mappings = {
             "value_template": "{{ value|int }}"
         }
     },
-
     "strike_distance": {
         "device_type": "sensor",
         "object_suffix": "stdist",
@@ -545,13 +512,13 @@ mappings = {
             "unit_of_measurement": "mi",
             "value_template": "{{ value|int }}"
         }
-    
     },
     "consumption": {
-        "device_type": "meter",
+        "device_type": "sensor",
         "object_suffix": "meter",
         "config": {
             "device_class": "gas",
+            "state_class": "total_increasing",
             "name": "meter",
             "unit_of_measurement": "ft³",
             "value_template": "{{ value|float }}"
@@ -690,7 +657,7 @@ def bridge_event_to_hass(mqttc, topic, data):
         for key in data.keys():
             if key in mappings:
                 publish_config(mqttc, key, model, instance, channel, mappings[key])
-              
+                logging.debug('Publish Info - 
 
 
 def rtl_433_bridge():
