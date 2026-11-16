@@ -324,7 +324,7 @@ mappings = {
         "object_suffix": "WD",
         "config": {
             "device_class": "wind_direction",
-            "state_class": "measurement",
+            "state_class": "measurement_angle",
             "name": "Wind Direction",
             "unit_of_measurement": "°",
             "value_template": "{{ value|float }}"
@@ -475,6 +475,7 @@ mappings = {
         "device_type": "sensor",
         "object_suffix": "brightness",
         "config": {
+            "device_class": "illuminance",
             "state_class":"measurement",
             "name": "Brightness",
             "unit_of_measurement": "lx",
@@ -487,6 +488,16 @@ mappings = {
         "config": {
             "state_class":"measurement",
             "name": "UV Index",
+            "unit_of_measurement": "UV Index",
+            "value_template": "{{ value|int }}"
+        }
+    },
+    "uvi": {
+        "device_type": "sensor",
+        "object_suffix": "uvi",
+        "config": {
+            "state_class":"measurement",
+            "name": "UVI Index",
             "unit_of_measurement": "UV Index",
             "value_template": "{{ value|int }}"
         }
